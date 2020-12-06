@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/raneio/playwright-vercel-test#readme",
   "dependencies": {
-    "playwright": "^1.6.2"
+    "puppeteer": "^5.5.0"
   }
 }

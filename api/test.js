@@ -1,11 +1,11 @@
-const playwright = require("playwright");
+const puppeteer = require('puppeteer');
 
 module.exports = async (req, res) => {
-  const browser = await playwright.chromium.launch();
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  await page.goto("http://wikipedia.org/");
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('https://example.com');
   const pageTitle = await page.title();
+  
   await browser.close();
 
   res.json({
