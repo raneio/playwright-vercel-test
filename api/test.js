@@ -21,5 +21,6 @@ module.exports = async (req, res) => {
   res.json({
     pageTitle: pageTitle,
     versions: process.versions,
+    env: process.env,
   });
 };
