@@ -1,9 +1,12 @@
-const puppeteer = process.env.VERCEL_ENV === "development" ? require('puppeteer'): null;
+const puppeteer = require('puppeteer');
 const chromium = require('chrome-aws-lambda');
 
 module.exports = async (req, res) => {
 
-  const browser = (puppeteer) 
+  console.log('process.env.ENVIRONMENT', process.env.ENVIRONMENT)
+  console.log('puppeteer', puppeteer)
+
+  const browser = (process.env.ENVIRONMENT === "development") 
     ? await puppeteer.launch() 
     : await chromium.puppeteer.launch({
       args: chromium.args,
