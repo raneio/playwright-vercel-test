@@ -19,8 +19,6 @@ module.exports = async (req, res) => {
   await browser.close();
 
   res.json({
-    pageTitle: pageTitle,
-    versions: process.versions,
-    env: process.env,
+    pageTitle: pageTitle
   });
 };
