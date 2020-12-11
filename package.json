@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/raneio/playwright-vercel-test#readme",
   "dependencies": {
+    "chrome-aws-lambda": "^5.5.0",
+    "puppeteer-core": "^5.5.0"
+  },
+  "devDependencies": {
     "puppeteer": "^5.5.0"
   }
 }
