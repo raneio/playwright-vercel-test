@@ -2,10 +2,6 @@ const puppeteer = require('puppeteer');
 const chromium = require('chrome-aws-lambda');
 
 module.exports = async (req, res) => {
-
-  console.log('process.env.ENVIRONMENT', process.env.ENVIRONMENT)
-  console.log('puppeteer', puppeteer)
-
   const browser = (process.env.ENVIRONMENT === "development") 
     ? await puppeteer.launch() 
     : await chromium.puppeteer.launch({
@@ -24,6 +20,6 @@ module.exports = async (req, res) => {
 
   res.json({
     pageTitle: pageTitle,
-    nodeVersion: process.versions,
+    versions: process.versions,
   });
 };
